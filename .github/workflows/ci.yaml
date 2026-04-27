@@ -27,3 +27,17 @@ jobs:
     - name: Push Docker image
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/nginx-gitops:${IMAGE_TAG}
+
+    - name: Update Helm values
+      run: |
+        git clone https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/<your-username>/argocd-helm-app.git
+        cd argocd-helm-app
+
+        sed -i "s/tag:.*/tag: ${IMAGE_TAG}/" values/values-dev.yaml
+
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+
+        git add .
+        git commit -m "Update image tag to ${IMAGE_TAG}"
+        git push
