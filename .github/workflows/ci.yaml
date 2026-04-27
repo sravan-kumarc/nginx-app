@@ -31,10 +31,10 @@ jobs:
     - name: Update Helm values
       run: |
         git clone https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/sravan-kumarc/argocd-helm-app.git
-        git checkout -b master
+        git checkout master
         cd argocd-helm-app
 
-        sed -i "s/tag:.*/tag: ${IMAGE_TAG}/" values-dev.yaml
+        sed -i "s/tag:.*/tag: ${IMAGE_TAG}/" values/values-dev.yaml
 
         git config user.name "github-actions"
         git config user.email "actions@github.com"
