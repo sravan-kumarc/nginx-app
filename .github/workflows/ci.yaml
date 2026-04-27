@@ -32,7 +32,7 @@ jobs:
       run: |
         git clone https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/sravan-kumarc/argocd-helm-app.git
         git checkout -b master
-        cd argocd-helm-app
+        cd nginx-chart
 
         sed -i "s/tag:.*/tag: ${IMAGE_TAG}/" values/values-dev.yaml
 
