@@ -4,7 +4,7 @@ Below is a clean, professional **README.md** you can directly add to your repo.
 
 ---
 
-# 🚀 Day 5 — End-to-End GitOps CI/CD Pipeline (GitHub Actions + Argo CD + Helm)
+# End-to-End GitOps CI/CD Pipeline (GitHub Actions + Argo CD + Helm) using NodeIP
 
 ## 📌 Overview
 
