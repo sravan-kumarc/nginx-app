@@ -6,6 +6,10 @@ on:
       - main
       - uat
       - prod
+  pull_request:
+    branches:
+      - uat
+      - prod
 
 jobs:
   build-and-deploy:
